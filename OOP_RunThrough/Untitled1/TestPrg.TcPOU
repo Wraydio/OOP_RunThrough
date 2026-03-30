@@ -7,6 +7,9 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[TC_EVENTS.ST_Warning.event1;
+TC_EVENTS.ST_Warning.ST_WarningEvent2;
+TC_EVENTS.ST_Warning.ST_WarningEvent3;
+TC_EVENTS.ST_Warning.ST_WarningEvent4;
 
 ]]></ST>
     </Implementation>
