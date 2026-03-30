@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="ITF_LiftActuator" Id="{bf46c465-a154-4fb4-8abd-ed2c37f02185}">
+    <Declaration><![CDATA[INTERFACE ITF_LiftActuator
+]]></Declaration>
+    <Method Name="ExtendActuator" Id="{73a03185-251c-4d08-b80c-94b096a85c38}">
+      <Declaration><![CDATA[METHOD ExtendActuator : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="RetractMethod" Id="{8c472bbf-adb5-4db8-8471-4d8a593a300e}">
+      <Declaration><![CDATA[METHOD RetractMethod : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

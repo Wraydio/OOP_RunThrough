@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="LiftManager" Id="{b519674b-042e-4629-a2ce-f61971732cfa}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'no_explicit_call' := 'Do not call this POU directly'}
+FUNCTION_BLOCK LiftManager
+
+VAR
+	_myLiftActuator : ITF_LiftActuator;
+	
+	iState: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Cycle" Id="{15ed8f4f-1b4c-47be-8e57-2db6c6c259e2}">
+      <Declaration><![CDATA[METHOD Cycle : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE iState OF 	
+
+	1:
+		_myLiftActuator.ExtendActuator();
+		iState := 0;
+	2:
+		_myLiftActuator.RetractMethod();
+		iState := 0;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="MyLiftActuator" Id="{84577b43-26ad-4a3b-b509-ed180b27bc1e}">
+      <Declaration><![CDATA[PROPERTY MyLiftActuator : ITF_LiftActuator]]></Declaration>
+      <Get Name="Get" Id="{c0262f38-7bad-4343-ba8b-3345bfffab51}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{d232a965-229a-477d-a70e-138a856406d8}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+  </POU>
+</TcPlcObject>

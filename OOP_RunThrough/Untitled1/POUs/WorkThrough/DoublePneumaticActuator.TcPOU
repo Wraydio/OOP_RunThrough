@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="DoublePneumaticActuator" Id="{350374c4-e35b-4588-a102-a9495299579d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK DoublePneumaticActuator EXTENDS PneumaticActuator
+
+VAR
+	extendOutput1 AT %Q* : BOOL;
+	retractOutput1 AT %Q* : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="ExtendActuator" Id="{5de02e6e-e492-4a69-ba79-315c2faa832a}">
+      <Declaration><![CDATA[METHOD ExtendActuator : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[extendOutput1 := TRUE;
+retractOutput1 := FALSE;
+
+SUPER^.ExtendActuator();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="RetractActuator" Id="{98b13311-7620-436b-b04c-62f132a20bcb}">
+      <Declaration><![CDATA[METHOD RetractActuator : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[RetractActuator := TRUE;
+extendOutput := FALSE;
+extendOutput1 := FALSE;
+retractOutput := TRUE;
+retractOutput1 := TRUE;
+
+IF _logging THEN
+	SendTraceData('Retracting...');
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

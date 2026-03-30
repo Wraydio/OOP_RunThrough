@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PneumaticActuator" Id="{9da2aabd-d215-4d9f-abd0-e42fd7026ca8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PneumaticActuator IMPLEMENTS ITF_LiftActuator
+
+VAR
+	extendOutput AT %Q* : BOOL;
+	retractOutput AT %Q* : BOOL;
+	_MaxOperatingPressure: LREAL;
+	_MinOperatingPressure: LREAL;
+	_logging: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="ExtendActuator" Id="{d6350479-2851-4a32-ab40-0921f1887534}">
+      <Declaration><![CDATA[METHOD ExtendActuator : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ExtendActuator := TRUE; // return value
+extendOutput := TRUE; // IO
+retractOutput := FALSE; // IO
+IF _logging THEN
+	SendTraceData('Extending.....');
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{54c264d5-b559-45f0-b3cb-d9ef9b6bba16}">
+      <Declaration><![CDATA[//FB_Init is always available implicitly and it is used primarily for initialization.
+//The return value is not evaluated. For a specific influence, you can also declare the
+//methods explicitly and provide additional code there with the standard initialization
+//code. You can evaluate the return value.
+METHOD FB_Init: BOOL
+VAR_INPUT
+    bInitRetains: BOOL; // TRUE: the retain variables are initialized (reset warm / reset cold)
+    bInCopyCode: BOOL;  // TRUE: the instance will be copied to the copy code afterward (online change)   
+	UnitMaxOperatingPressure	: LREAL;
+	UnitMinOperatingPressure	: LREAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_MaxOperatingPressure := UnitMaxOperatingPressure;
+_MinOperatingPressure := UnitMinOperatingPressure;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="MaxOperatingPressure" Id="{5e6fe69a-f612-4cfe-9283-393e0164af1d}">
+      <Declaration><![CDATA[PROPERTY MaxOperatingPressure : LREAL]]></Declaration>
+      <Get Name="Get" Id="{47e7363c-5eea-4698-b749-7c642aae18bf}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[MaxOperatingPressure := _MaxOperatingPressure;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="MinOperatingPressure" Id="{404fb552-ded5-4db7-95f4-1241f856a6e1}">
+      <Declaration><![CDATA[PROPERTY MinOperatingPressure : LREAL]]></Declaration>
+      <Get Name="Get" Id="{a706f1ea-ac48-47d7-9f20-a13a1292d027}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[MinOperatingPressure := _MinOperatingPressure;
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="RetractActuator" Id="{9ab8d642-6af1-4ad4-b708-8afe3b61dd2e}">
+      <Declaration><![CDATA[METHOD RetractActuator : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[RetractActuator := TRUE;
+extendOutput := FALSE;
+retractOutput := TRUE;
+IF _logging THEN
+	SendTraceData('Retracting.....');
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SendTraceData" Id="{1ea97bf1-8a43-49ac-8339-ba0012bae35a}">
+      <Declaration><![CDATA[METHOD PROTECTED SendTraceData : BOOL
+VAR_INPUT
+	MessageToSend	: STRING(80);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(msgCtrlMask	:= ADSLOG_MSGTYPE_LOG,
+			msgFmtStr	:= MessageToSend,
+			strArg		:= '');]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="SetLogginState" Id="{7debebeb-caa3-46d9-9ec3-6e5c63edc971}">
+      <Declaration><![CDATA[PROPERTY PUBLIC SetLogginState : BOOL]]></Declaration>
+      <Get Name="Get" Id="{203714d8-ed56-48aa-89a2-5b1325fb80b6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[SetLogginState := _logging;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{72b78e5b-0544-4255-be4b-2f40c5dd6ed1}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_logging := SetLogginState;
+]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+  </POU>
+</TcPlcObject>

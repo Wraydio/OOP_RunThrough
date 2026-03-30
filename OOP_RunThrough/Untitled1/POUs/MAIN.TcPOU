@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{42f016fd-1c0c-45f4-8c34-f5b28d9f6f67}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	myPneumaticPusher : PneumaticActuator(UnitMaxOperatingPressure := 100000.0, UnitMinOperatingPressure := 5000.0);
+	iState: INT;
+	EnableSystemLogging: BOOL;
+	DisableLoggingSystem: BOOL;
+	mySecondPneumaticPusher: DoublePneumaticActuator (UnitMaxOperatingPressure := 100000.0, UnitMinOperatingPressure := 5000.0);
+	control: INT;
+	liftManager : LiftManager := (MyLiftActuator := myPneumaticPusher);
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+CASE control OF 
+	1: 
+		liftManager.MyLiftActuator := myPneumaticPusher;
+		control := 0;
+	2:	
+		liftManager.MyLiftActuator := mySecondPneumaticPusher;
+		control := 0;
+END_CASE
+
+liftManager.Cycle();
+
+IF EnableSystemLogging THEN
+	EnableSystemLogging := FALSE;
+	myPneumaticPusher.SetLogginState := TRUE;
+END_IF
+
+IF DisableLoggingSystem THEN
+	DisableLoggingSystem := FALSE;
+	myPneumaticPusher.SetLogginState := FALSE;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
