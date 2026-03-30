@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="TestPrg" Id="{180aa939-3755-4e05-bbd0-449d032be2e9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM TestPrg
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TC_EVENTS.ST_Warning.event1;
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
