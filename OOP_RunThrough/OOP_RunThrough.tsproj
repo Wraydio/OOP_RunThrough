@@ -2,15 +2,36 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{30941D35-8750-4946-AA88-C317C925367A}" PersistentType="true">ST_Warning</Name>
+			<Name GUID="{934AA392-0ACA-47BF-8240-4EACA5EE096A}" PersistentType="true">ST_Warning</Name>
 			<DisplayName TxtId=""><![CDATA[NewEventClass_DisplayText]]></DisplayName>
 			<EventId>
 				<Name Id="1">event1</Name>
 				<DisplayName TxtId=""><![CDATA[Event_DisplayText]]></DisplayName>
 				<Severity>Warning</Severity>
 			</EventId>
+			<EventId>
+				<Name Id="2">ST_WarningEvent2</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent2_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="3">ST_WarningEvent3</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent3_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="4">ST_WarningEvent4</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent4_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5">ST_WarningEvent5</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent5_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
 			<Hides>
 				<Hide GUID="{7DF3BF24-EA46-44BA-B8F9-7C9161409C8C}"/>
+				<Hide GUID="{30941D35-8750-4946-AA88-C317C925367A}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
