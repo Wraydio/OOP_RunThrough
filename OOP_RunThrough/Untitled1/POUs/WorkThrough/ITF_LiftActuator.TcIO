@@ -9,8 +9,8 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Method Name="RetractMethod" Id="{8c472bbf-adb5-4db8-8471-4d8a593a300e}">
-      <Declaration><![CDATA[METHOD RetractMethod : BOOL
+    <Method Name="RetractActuator" Id="{8c472bbf-adb5-4db8-8471-4d8a593a300e}">
+      <Declaration><![CDATA[METHOD RetractActuator : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>

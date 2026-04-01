@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<TcEventSources Version="2">
+	<Translations>
+		<Text TxtId="Event_DisplayText"/>
+		<Text TxtId="NewEventClass_DisplayText"/>
+		<Text TxtId="ST_WarningEvent2_DisplayText"/>
+		<Text TxtId="ST_WarningEvent3_DisplayText"/>
+		<Text TxtId="ST_WarningEvent4_DisplayText"/>
+		<Text TxtId="ST_WarningEvent5_DisplayText"/>
+		<Text TxtId="ST_WarningEvent6_DisplayText"/>
+		<Text TxtId="ST_WarningEvent7_DisplayText"/>
+	</Translations>
+	<Source>
+		<GUID>{2F587F78-DCE8-46EA-AA7B-C18D080B0484}</GUID>
+		<Name>NewEventClass_DisplayText</Name>
+		<Event>
+			<Id>1</Id>
+			<Message>Event_DisplayText</Message>
+		</Event>
+		<Event>
+			<Id>2</Id>
+			<Message>ST_WarningEvent2_DisplayText</Message>
+		</Event>
+		<Event>
+			<Id>3</Id>
+			<Message>ST_WarningEvent3_DisplayText</Message>
+		</Event>
+		<Event>
+			<Id>4</Id>
+			<Message>ST_WarningEvent4_DisplayText</Message>
+		</Event>
+		<Event>
+			<Id>5</Id>
+			<Message>ST_WarningEvent5_DisplayText</Message>
+		</Event>
+		<Event>
+			<Id>6</Id>
+			<Message>ST_WarningEvent6_DisplayText</Message>
+		</Event>
+		<Event>
+			<Id>7</Id>
+			<Message>ST_WarningEvent7_DisplayText</Message>
+		</Event>
+	</Source>
+</TcEventSources>
