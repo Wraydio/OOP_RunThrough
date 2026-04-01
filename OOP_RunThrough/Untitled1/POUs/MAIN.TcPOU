@@ -3,6 +3,8 @@
   <POU Name="MAIN" Id="{42f016fd-1c0c-45f4-8c34-f5b28d9f6f67}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	// This is Sebastien's Edit
+
 	myPneumaticPusher : PneumaticActuator(UnitMaxOperatingPressure := 100000.0, UnitMinOperatingPressure := 5000.0);
 	iState: INT;
 	EnableSystemLogging: BOOL;
