@@ -11,8 +11,8 @@ TC_EVENTS.ST_Warning.ST_WarningEvent2;
 TC_EVENTS.ST_Warning.ST_WarningEvent3;
 TC_EVENTS.ST_Warning.ST_WarningEvent4;
 TC_EVENTS.ST_Warning.ST_WarningEvent5;
-TC_EVENTS.ST_Warning.ST_WarningEvent6;
-
+//TC_EVENTS.ST_Warning.ST_WarningEvent6;
+TC_EVENTS.ST_Warning.ST_WarningEvent61;
 ]]></ST>
     </Implementation>
   </POU>

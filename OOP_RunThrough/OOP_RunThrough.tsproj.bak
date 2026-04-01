@@ -1,18 +1,13 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{2F587F78-DCE8-46EA-AA7B-C18D080B0484}" PersistentType="true">ST_Warning</Name>
+			<Name GUID="{2649AFF4-69B9-4F2B-B454-6D4FD27FFDA9}" PersistentType="true">ST_Warning</Name>
 			<DisplayName TxtId=""><![CDATA[NewEventClass_DisplayText]]></DisplayName>
 			<EventId>
 				<Name Id="1">event1</Name>
 				<DisplayName TxtId=""><![CDATA[Event_DisplayText]]></DisplayName>
 				<Severity>Warning</Severity>
-			</EventId>
-			<EventId>
-				<Name Id="2">ST_WarningEvent2</Name>
-				<DisplayName TxtId=""><![CDATA[ST_WarningEvent2_DisplayText]]></DisplayName>
-				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="3">ST_WarningEvent3</Name>
@@ -30,19 +25,29 @@
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
-				<Name Id="6">ST_WarningEvent6</Name>
+				<Name Id="6">ST_WarningEvent61</Name>
 				<DisplayName TxtId=""><![CDATA[ST_WarningEvent6_DisplayText]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
-				<Name Id="7">ST_WarningEvent7</Name>
+				<Name Id="7">ST_WarningEvent71</Name>
 				<DisplayName TxtId=""><![CDATA[ST_WarningEvent7_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="8">ST_WarningFromSeb</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent8_DisplayText]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<Hides>
 				<Hide GUID="{7DF3BF24-EA46-44BA-B8F9-7C9161409C8C}"/>
 				<Hide GUID="{30941D35-8750-4946-AA88-C317C925367A}"/>
 				<Hide GUID="{934AA392-0ACA-47BF-8240-4EACA5EE096A}"/>
+				<Hide GUID="{2F587F78-DCE8-46EA-AA7B-C18D080B0484}"/>
+				<Hide GUID="{B289CC88-9A20-4270-BFD2-1C4BE85A4BD7}"/>
+				<Hide GUID="{2ABA862F-4568-4B91-AEE4-CCCBAEAA8297}"/>
+				<Hide GUID="{D43AEE24-95DA-4E8F-838E-A6D25A01B786}"/>
+				<Hide GUID="{D6488788-8D55-401A-9146-DBB91A2A639C}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
@@ -56,7 +61,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{7C09CC49-1978-4E91-9BAA-6D069DA30A4A}" Name="Untitled1" PrjFilePath="Untitled1\Untitled1.plcproj" TmcFilePath="Untitled1\Untitled1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{E64C8372-A608-04D8-5280-7B38992C908F}" TmcPath="Untitled1\Untitled1.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{BA5790DA-1495-F397-12F2-F058A358794A}" TmcPath="Untitled1\Untitled1.tmc">
 					<Name>Untitled1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
