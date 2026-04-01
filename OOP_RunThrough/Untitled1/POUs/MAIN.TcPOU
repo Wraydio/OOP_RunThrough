@@ -36,7 +36,9 @@ END_IF
 IF DisableLoggingSystem THEN
 	DisableLoggingSystem := FALSE;
 	myPneumaticPusher.SetLogginState := FALSE;
-END_IF]]></ST>
+END_IF
+
+TestPrg();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

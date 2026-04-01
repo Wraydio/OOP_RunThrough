@@ -2,7 +2,7 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{934AA392-0ACA-47BF-8240-4EACA5EE096A}" PersistentType="true">ST_Warning</Name>
+			<Name GUID="{2F587F78-DCE8-46EA-AA7B-C18D080B0484}" PersistentType="true">ST_Warning</Name>
 			<DisplayName TxtId=""><![CDATA[NewEventClass_DisplayText]]></DisplayName>
 			<EventId>
 				<Name Id="1">event1</Name>
@@ -29,9 +29,20 @@
 				<DisplayName TxtId=""><![CDATA[ST_WarningEvent5_DisplayText]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
+			<EventId>
+				<Name Id="6">ST_WarningEvent6</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent6_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="7">ST_WarningEvent7</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent7_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
 			<Hides>
 				<Hide GUID="{7DF3BF24-EA46-44BA-B8F9-7C9161409C8C}"/>
 				<Hide GUID="{30941D35-8750-4946-AA88-C317C925367A}"/>
+				<Hide GUID="{934AA392-0ACA-47BF-8240-4EACA5EE096A}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
