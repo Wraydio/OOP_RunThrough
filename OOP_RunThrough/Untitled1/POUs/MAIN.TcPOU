@@ -4,7 +4,8 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	// This is Sebastien's Edit 1 from 64
-
+	// yet another comment
+	
 	myPneumaticPusher : PneumaticActuator(UnitMaxOperatingPressure := 100000.0, UnitMinOperatingPressure := 5000.0);
 	iState: INT;
 	EnableSystemLogging: BOOL;
