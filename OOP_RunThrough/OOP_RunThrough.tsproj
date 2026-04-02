@@ -2,16 +2,7 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00000000003D}" TcBaseType="true" HideType="true">USINTARR6</Name>
-			<BitSize>48</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>6</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{2649AFF4-69B9-4F2B-B454-6D4FD27FFDA9}" PersistentType="true">ST_Warning</Name>
+			<Name GUID="{B5008982-1C34-4458-836E-32D5AC4635CB}" PersistentType="true">ST_Warning</Name>
 			<DisplayName TxtId=""><![CDATA[NewEventClass_DisplayText]]></DisplayName>
 			<EventId>
 				<Name Id="1">event1</Name>
@@ -48,6 +39,16 @@
 				<DisplayName TxtId=""><![CDATA[ST_WarningEvent8_DisplayText]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
+			<EventId>
+				<Name Id="10">OneWeirdEvent</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent8_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9">ST_WarningEvent9</Name>
+				<DisplayName TxtId=""><![CDATA[ST_WarningEvent9_DisplayText]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
 			<Hides>
 				<Hide GUID="{7DF3BF24-EA46-44BA-B8F9-7C9161409C8C}"/>
 				<Hide GUID="{30941D35-8750-4946-AA88-C317C925367A}"/>
@@ -57,6 +58,7 @@
 				<Hide GUID="{2ABA862F-4568-4B91-AEE4-CCCBAEAA8297}"/>
 				<Hide GUID="{D43AEE24-95DA-4E8F-838E-A6D25A01B786}"/>
 				<Hide GUID="{D6488788-8D55-401A-9146-DBB91A2A639C}"/>
+				<Hide GUID="{2649AFF4-69B9-4F2B-B454-6D4FD27FFDA9}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
@@ -70,7 +72,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{7C09CC49-1978-4E91-9BAA-6D069DA30A4A}" Name="Untitled1" PrjFilePath="Untitled1\Untitled1.plcproj" TmcFilePath="Untitled1\Untitled1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{95143E80-3297-829D-36CA-DA5E65712D24}" TmcPath="Untitled1\Untitled1.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{716721E5-4A13-2A98-CB62-628115C67F1C}" TmcPath="Untitled1\Untitled1.tmc">
 					<Name>Untitled1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -122,48 +124,5 @@
 			<ImageId>437</ImageId>
 			<XmlProps><![CDATA[<Address>Hauptstraße 5, 32567 Berlin</Address><Latitude>123.41</Latitude><Longitude>43.4555</Longitude><SystemIdAlias /><DeviceProps></DeviceProps><SelectedDriverVersion>Latest</SelectedDriverVersion><StreamTargets><StreamTargetItem Id="04a704bc-57f4-4073-bcfb-4b2fcf0c8430"><Name>Boot Project Path</Name><Type>FILE</Type><Directory>%TC_BOOTPRJPATH%</Directory><MqttConnectionSettings><Broker>127.0.0.1</Broker><BrokerPort>1883</BrokerPort><UserID /><WithCertificates>false</WithCertificates><CA_Certificate /><Cert_Certificate /><Key_Certificate /><CommunicationTimeout>30000000</CommunicationTimeout><KeepAlivePeriod>600000000</KeepAlivePeriod><TcpBufferSize>32768</TcpBufferSize><SecurityType>NO_SECURITY</SecurityType><Insecure>false</Insecure><IgnoreExpiration>false</IgnoreExpiration><IsPskIdCaseSensitive>false</IsPskIdCaseSensitive><IgnoreCnMismatch>false</IgnoreCnMismatch><TargetPaths>false</TargetPaths><PskMode>HexKey</PskMode></MqttConnectionSettings><TimeType>None</TimeType></StreamTargetItem></StreamTargets><ActivateAlyLogger>false</ActivateAlyLogger>]]></XmlProps>
 		</Analytics>
-		<Io>
-			<Device Id="1" DevType="130" AmsNetId="199.4.42.250.2.255" RemoteName="Device 1 (EtherCAT Slave)">
-				<Name>Device 1 (EtherCAT Slave)</Name>
-				<AddressInfo>
-					<Ccat>
-						<Address>0</Address>
-						<Offset>0</Offset>
-						<Size>0</Size>
-						<BaseAddr>0</BaseAddr>
-						<BusNo>0</BusNo>
-						<SlotNo>0</SlotNo>
-					</Ccat>
-				</AddressInfo>
-				<Vars VarGrpType="1" InsertType="1">
-					<Name>Inputs</Name>
-				</Vars>
-				<Vars VarGrpType="2" InsertType="1">
-					<Name>Outputs</Name>
-				</Vars>
-				<Vars VarGrpType="3">
-					<Name>InfoData</Name>
-					<Var>
-						<Name>State</Name>
-						<Comment><![CDATA[0x___1 = Slave is in 'INIT' state
-0x___2 = Slave is in 'PREOP' state
-0x___4 = Slave is in 'SAFEOP' state
-0x___8 = Slave is in 'OP' state]]></Comment>
-						<Type>UINT</Type>
-						<InOut>0</InOut>
-					</Var>
-					<Var>
-						<Name>NetId</Name>
-						<Type GUID="{18071995-0000-0000-0000-00000000003D}">USINTARR6</Type>
-						<BitOffs>16</BitOffs>
-						<InOut>0</InOut>
-					</Var>
-				</Vars>
-				<Image Id="1" AddrType="1" ImageType="2">
-					<Name>Image</Name>
-				</Image>
-				<EtherCATSlave/>
-			</Device>
-		</Io>
 	</Project>
 </TcSmProject>
